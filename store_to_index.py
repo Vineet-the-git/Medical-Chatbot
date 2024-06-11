@@ -1,6 +1,5 @@
 from src.utils.common import extract_data_from_pdf, split_text_into_chunks, download_embedding_model
-from langchain_community.vectorstores import Pinecone
-from pinecone import Pinecone as pinecone
+from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
 import os
 import logging
@@ -10,8 +9,19 @@ load_dotenv()
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_API_ENV = os.getenv("PINECONE_API_ENV")
+PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
 
 def main(data_path):
+    """
+    Extracts data from PDF files, splits the text into chunks, downloads an embedding model,
+    and stores the embeddings in the Pinecone index.
+
+    Args:
+        data_path (str): The path to the directory containing the PDF files.
+
+    Returns:
+        None
+    """
 
     logging.info("Extracting data from the pdf files...")
     # Extract data from the pdf files
@@ -25,15 +35,10 @@ def main(data_path):
     embeddings = download_embedding_model()
 
     logging.info("Storing the embeddings in the Pinecone index...")
-    # Initialize the Pinecone object
 
-
-    pc = pinecone(
-        api_key=PINECONE_API_KEY
-    )
-    index_name="medicine"
+    index_name=PINECONE_INDEX_NAME
     #Creating Embeddings for Each of The Text Chunks & storing
-    docsearch=Pinecone.from_texts([chunk.page_content for chunk in text_chunks], embeddings, index_name=index_name)
+    vectorStore = PineconeVectorStore.from_texts([chunk.page_content for chunk in text_chunks], embeddings, index_name=PINECONE_INDEX_NAME)
 
     logging.info("Embeddings stored successfully in the Pinecone index.")
 

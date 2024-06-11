@@ -24,3 +24,13 @@ This repo will contain my solution for MS hackathon 2024.
     python store_to_index.py
     ```
 5. Download the pre-trained models from Hugging Face to the `models` directory.
+
+
+## To do of the project
+
+- [x] Setup the project structure template
+- [x] Build the data injestion part to store the data in Pinecone from the pdf files
+- [ ] Build the chatbot using Langchain
+    - [ ] The chatbot should be able to take user input in the form of symptoms, history of patient, pathology reports, etc.
+    - [ ] The chatbot should have a history of the conversation with the user
+- [ ] Build the web interface for the chatbot
