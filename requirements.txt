@@ -8,5 +8,5 @@ langchain-pinecone
 flask
 pypdf
 python-dotenv
-
+gradio
 # -e .
