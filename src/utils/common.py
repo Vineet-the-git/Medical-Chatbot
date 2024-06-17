@@ -33,7 +33,7 @@ def split_text_into_chunks(documents):
     chunks : list : List of chunks with text split into chunks
     """
     
-    splitter = RecursiveCharacterTextSplitter(chunk_size = 320, chunk_overlap = 20)
+    splitter = RecursiveCharacterTextSplitter(chunk_size = 1500, chunk_overlap = 20)
     chunks = splitter.split_documents(documents)
     return chunks
 

@@ -9,4 +9,6 @@ flask
 pypdf
 python-dotenv
 gradio
+langchain-google-genai
+google.generativeai
 # -e .
