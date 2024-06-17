@@ -19,21 +19,26 @@ Follow these steps to set up the project locally:
     git clone https://github.com/Vineet-the-git/Medical-Chatbot.git
     cd Medical-Chatbot
     ```
+2. **Create a virtual environment using conda:**
+    ```bash
+    conda create -n chatbot python=3.10
+    conda activate chatbot
+    ```
 
-2. **Install the required dependencies:**
+3. **Install the required dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Start the chatbot:**
+4. **Start the chatbot:**
     ```bash
     python app.py
     ```
 
-4. **Access the chatbot:**
+5. **Access the chatbot:**
     Open your browser and navigate to `http://localhost:{port}/`, where `{port}` is the port number shown in the terminal (e.g., `http://127.0.0.1:7860`).
 
-5. **Stop the server:**
+6. **Stop the server:**
     Press `Ctrl+C` in the terminal.
 
 For a visual guide on setting up the project, you can watch [this video](https://www.youtube.com/watch?v=Q6J9Q1Q1Z1M).
