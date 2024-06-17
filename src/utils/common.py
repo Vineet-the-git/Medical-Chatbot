@@ -54,6 +54,23 @@ def download_embedding_model():
     return embeddings
 
 def set_env_variables():
+    """
+    Sets environment variables based on the values specified in the config file.
+
+    Reads the config file located at './config/config.yaml' and sets each key-value pair as an environment variable.
+
+    Example:
+        If the config file contains the following key-value pairs:
+        ```
+        DATABASE_HOST: 'localhost'
+        DATABASE_PORT: '5432'
+        ```
+        The function will set the environment variables as follows:
+        ```
+        os.environ['DATABASE_HOST'] = 'localhost'
+        os.environ['DATABASE_PORT'] = '5432'
+        ```
+    """
     path_config = "./config/config.yaml"
     # Load YAML file
     with open(path_config, 'r') as file:

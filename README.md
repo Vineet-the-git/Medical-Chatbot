@@ -1,47 +1,93 @@
 # Healthcare Diagnosis Chatbot
 
-This repo will contain my solution for MS hackathon 2024.
+Welcome to my repository for the **MS Hackathon 2024** submission!
 
-**Problem Statement:** Build a chatbot capable of diagnosing common medical conditions based on user symptoms input. Utilize machine learning models trained on medical data to provide accurate suggestions and recommendations for further action.
+## Problem Statement
 
-**Solution:** I will build a chatbot using Python and Langchain. The chatbot will be able to take user input in the form of symptoms, history of patient, pathology reports, etc. and provide a diagnosis based on the input. The chatbot will also ask follow-up questions to gather more information if needed. The chatbot will also provide recommendations for further action such as seeing a doctor, getting tests done, etc. The chatbot will use LLMs fine-tuned on medical data to provide accurate suggestions. The chatbot will also fetch answer from credible sources like books, research papers, etc. to provide accurate information. The chatbot will be deployed on a web interface for easy access.
+Create a chatbot capable of diagnosing common medical conditions based on user-input symptoms. The chatbot should use machine learning models trained on medical data to provide accurate suggestions and recommendations for further action.
 
+## Solution Overview
 
-## How to setup the project locally
+I've built a chatbot using **Large Language Models (LLMs)** and the **Langchain** framework. The chatbot takes symptoms as input from the user and provides a diagnosis based on this input. **It can ask follow-up questions** to gather more information if needed and offers recommendations for further action, such as seeing a doctor or getting tests done. The chatbot fetches answers from credible sources (books on Medicine, Pediatrics, and Dermatology) containing common diseases and their symptoms. The user interface is created using **Gradio** and the data is stored and retrieved using **Pinecone**. Answers are formulated using the **Gemini-API** due to its free and user-friendly nature.
 
-1. Clone the repository
-2. Install the required dependencies using `pip install -r requirements.txt`
-3. Create a `.env` file in the root directory and add the following environment variables:
+## Project Setup
+
+Follow these steps to set up the project locally:
+
+1. **Clone the repository and navigate to the project directory:**
+    ```bash
+    git clone https://github.com/Vineet-the-git/Medical-Chatbot.git
+    cd Medical-Chatbot
     ```
-    PINECONE_API_KEY=<your_pinecone_api_key>
+
+2. **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
     ```
 
-    To create a Pinecone API key, sign up on the Pinecone website and create a new API key. Copy the API key and add it to the `.env` file.
-    Create a new Pinecone index named `medicine` and add the index name to the `.env` file as well.
-
-4. Store the data in the Pinecone index using the `store_to_index.py` script:
+3. **Start the chatbot:**
+    ```bash
+    python app.py
     ```
+
+4. **Access the chatbot:**
+    Open your browser and navigate to `http://localhost:{port}/`, where `{port}` is the port number shown in the terminal (e.g., `http://127.0.0.1:7860`).
+
+5. **Stop the server:**
+    Press `Ctrl+C` in the terminal.
+
+For a visual guide on setting up the project, you can watch [this video](https://www.youtube.com/watch?v=Q6J9Q1Q1Z1M).
+
+## Using the Chatbot
+
+![Chatbot Interface](./media/UI.png)
+
+1. **Enter symptoms:**
+    Type the symptoms in the text box and click the `Submit` button.
+2. **Receive diagnosis:**
+    The chatbot will respond with a diagnosis based on the entered symptoms.
+3. **Button Functions:**
+    - `Clear`: Clears the chat history and starts a new conversation.
+    - `Undo`: Removes the last user message and its response from the chat history.
+    - `Retry`: Retries the last message sent by the user.
+
+For a demonstration, check out [this video](https://www.youtube.com/watch?v=Q6J9Q1Q1Z1M).
+
+## Solution Workflow
+
+![Solution Approach](./media/Approach.png)
+
+## Running the Project on Your Own Data
+
+1. **Add your data:**
+    Place your data in the `data` folder.
+2. **Create a Pinecone index:**
+    Add your Pinecone API key to the `config/config.yaml` file and load your data to the index:
+    ```bash
     python store_to_index.py
     ```
-5. Download the pre-trained models from Hugging Face to the `models` directory.
+3. **Set up Gemini-API:**
+    Create an account and add your API key to the `config/config.yaml` file.
+4. **Start the chatbot:**
+    ```bash
+    python app.py
+    ```
+5. **Access the chatbot:**
+    Open your browser and navigate to `http://localhost:{port}/`.
 
+## Future Improvements
 
-## To do of the project
+- [x] Try different prompts to improve robustness.
+- [x] Add instructions to run the project.
+- [x] Document the code and approach.
+- [x] Explore local LLMs to reduce latency.
 
-- [x] Setup the project structure template
-- [x] Build the data injestion part to store the data in Pinecone from the pdf files
-- [x] Build the chatbot using Langchain
-    - [x] The chatbot should be able to take user input in the form of symptoms, history of patient etc.
-    - [x] The chatbot should have a history of the conversation with the user
-- [x] Build the web interface for the chatbot
+## References
 
-## Things to do next:
-- [x] Make sure which chain to use, RetrievalQA or ConversationalRetrieval
-- [x] Also make an interface using simple html, css.
-- [ ] Start adding functionalities once base bot is working.
+- [Langchain Documentation](https://docs.langchain.com/)
+- [Gradio Documentation](https://gradio.app/docs)
+- [Pinecone Documentation](https://www.pinecone.io/docs/)
+- [Gemini-API Documentation](https://geminiapi.com/docs/)
+- [Hugging Face Transformers Documentation](https://huggingface.co/transformers/)
 
-## Next improvements to make
-- [ ] Try out different prompts to make it more robust.
-- [ ] Add the instructions to run the project.
-- [ ] Document the code and the approach.
-- [ ] Explore local llms to see if the performance improves.
+Thank you for checking out my project! If you have any questions or suggestions, feel free to open an issue or contact me.
