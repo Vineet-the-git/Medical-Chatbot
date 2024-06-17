@@ -31,11 +31,17 @@ This repo will contain my solution for MS hackathon 2024.
 - [x] Setup the project structure template
 - [x] Build the data injestion part to store the data in Pinecone from the pdf files
 - [x] Build the chatbot using Langchain
-    - [ ] The chatbot should be able to take user input in the form of symptoms, history of patient etc.
-    - [ ] The chatbot should have a history of the conversation with the user
-- [ ] Build the web interface for the chatbot
+    - [x] The chatbot should be able to take user input in the form of symptoms, history of patient etc.
+    - [x] The chatbot should have a history of the conversation with the user
+- [x] Build the web interface for the chatbot
 
 ## Things to do next:
-- [ ] Make sure which chain to use, RetrievalQA or ConversationalRetrieval
-- [ ] Also make an interface using simple html, css.
+- [x] Make sure which chain to use, RetrievalQA or ConversationalRetrieval
+- [x] Also make an interface using simple html, css.
 - [ ] Start adding functionalities once base bot is working.
+
+## Next improvements to make
+- [ ] Try out different prompts to make it more robust.
+- [ ] Add the instructions to run the project.
+- [ ] Document the code and the approach.
+- [ ] Explore local llms to see if the performance improves.
