@@ -41,7 +41,7 @@ Follow these steps to set up the project locally:
 6. **Stop the server:**
     Press `Ctrl+C` in the terminal.
 
-For a visual guide on setting up the project, you can watch [this video](https://www.youtube.com/watch?v=Q6J9Q1Q1Z1M).
+For a visual guide on setting up the project, you can watch [this video](https://youtu.be/zbOplcCoD3M).
 
 ## Using the Chatbot
 
@@ -56,7 +56,7 @@ For a visual guide on setting up the project, you can watch [this video](https:/
     - `Undo`: Removes the last user message and its response from the chat history.
     - `Retry`: Retries the last message sent by the user.
 
-For a demonstration, check out [this video](https://www.youtube.com/watch?v=Q6J9Q1Q1Z1M).
+For a demonstration, check out [this video](https://youtu.be/iy-zqgkjXkg).
 
 ## Solution Workflow
 
@@ -80,12 +80,30 @@ For a demonstration, check out [this video](https://www.youtube.com/watch?v=Q6J9
 5. **Access the chatbot:**
     Open your browser and navigate to `http://localhost:{port}/`.
 
-## Future Improvements
+## Some Test Cases
+**Disease: Common Cold**
+- User message 1: I have a runny nose, headache, and sore throat.
+- User message 2: I also have a mild fever and feel very tired.
+- User message 3: I've noticed some congestion and occasional coughing.
 
-- [x] Try different prompts to improve robustness.
-- [x] Add instructions to run the project.
-- [x] Document the code and approach.
-- [x] Explore local LLMs to reduce latency.
+Prevention, cautions, and medical advice:
+- Prevention: Wash hands frequently, avoid close contact with sick individuals, and maintain a healthy immune system through diet and exercise.
+- Cautions: Stay hydrated, rest as much as possible, and avoid sharing personal items.
+- Medical advice: Over-the-counter medications can help relieve symptoms. If symptoms persist for more than a week or worsen, consult a healthcare provider.
+
+---
+
+**Disease: Influenza (Flu)**
+- User message 1: I have a high fever, chills, and muscle aches.
+- User message 2: I also have a cough, sore throat, and fatigue.
+- User message 3: I've experienced some nausea and a runny nose.
+
+Prevention, cautions, and medical advice:
+- Prevention: Get the annual flu vaccine, practice good hygiene, and avoid close contact with infected individuals.
+- Cautions: Stay home from work or school to prevent spreading the virus, and drink plenty of fluids.
+- Medical advice: Antiviral medications may be prescribed by a doctor, and rest is crucial for recovery. Seek medical attention if symptoms become severe.
+
+
 
 ## References
 
