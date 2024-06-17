@@ -3,7 +3,8 @@
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import SentenceTransformerEmbeddings
-
+import os
+import yaml
 
 # Function to extract data from the pdf file
 def extract_data_from_pdf(data_dir):
@@ -51,3 +52,13 @@ def download_embedding_model():
     
     embeddings = SentenceTransformerEmbeddings(model_name="NeuML/pubmedbert-base-embeddings")
     return embeddings
+
+def set_env_variables():
+    path_config = "./config/config.yaml"
+    # Load YAML file
+    with open(path_config, 'r') as file:
+        config = yaml.safe_load(file)
+
+    # Set environment variables
+    for key, value in config.items():
+        os.environ[key] = value
